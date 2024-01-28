@@ -1,0 +1,22 @@
+{%  extends 'app_project/base.html' %}
+
+
+{% block content %}
+
+{{ message }}
+
+<ul>
+{% for user in users %}
+<li>
+user {{ user.id }}:
+username : {{  user.username }} - 
+password: {{ user.passord }} - 
+tel: {{ user.tel }} -
+role:  {{ user.role }}
+<a href="{% url 'delete-user' user.id %}">delete user</a> &nbsp; &nbsp; &nbsp;
+<a href="{% url 'get_permission_per_user' user.id %}">get permission per user</a> &nbsp; &nbsp; &nbsp;
+
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}

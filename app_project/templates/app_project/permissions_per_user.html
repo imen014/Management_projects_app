@@ -1,0 +1,25 @@
+{%  extends 'app_project/base.html' %}
+
+
+{% block content %}
+
+
+{{ message }}
+
+<h4>
+{{ user.username }} permissions
+</h4>
+<ul>
+{% for permission in permissions %}
+<li>
+
+
+
+codename: {{ permission.codename }} - 
+name: {{ permission.name }} - 
+content_type: {{ permission.content_type }}
+
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}

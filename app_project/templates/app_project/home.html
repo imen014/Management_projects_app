@@ -1,0 +1,28 @@
+{%  extends 'app_project/base.html' %}
+
+{% block content %}
+
+{{ message }}
+<h5>
+welcome to home
+</h5>
+<button type="submit"><a href="{%  url 'logout_user' %}">logout</a></button><br/>
+
+{% if perms.app_project.get_users %}
+<button class="styled-button" type="submit"><a href="{%  url 'get-users' %}">get-users</a></button><br/>
+<button class="styled-button"  type="submit"><a href="{%  url 'create_user' %}">create user</a></button><br/>
+<button class="styled-button" type="submit"><a href="{%  url 'get_user_permissions' %}">get user permissions</a></button><br/><
+<button class="styled-button" type="submit"><a href="{%  url 'create_permission' %}">create permission</a></button><br/>
+<button  class="styled-button" type="submit"><a href="{%  url 'attribuer_permission' %}">attribuer permission</a></button><br/>
+<button class="styled-button" type="submit"><a href="{%  url 'get_projects' %}">get projects</a></button><br/>
+
+
+{% endif %}
+
+<button class="styled-button" type="submit"><a href="{%  url 'get_my_projects' %}">get my projects</a></button><br/>
+
+
+{% if perms.create_project_app.create_project %}
+    <button class="styled-button" type="submit"><a href="{% url 'create_project' %}">create project</a></button><br/>
+{% endif %}
+{% endblock content %}

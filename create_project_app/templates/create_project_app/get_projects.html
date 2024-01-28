@@ -1,0 +1,23 @@
+{%  extends 'create_project_app/base.html' %}
+
+
+{% block content %}
+
+{{ message }}
+
+<ul>
+{% for project in projects %}
+<li>
+{{  project.project_name}}
+{{  project.project_content}}
+{{  project.project_manager}}
+<button type="submit"><a href="{%  url 'modify_project' project.id %}">modify project</a></button>
+<button type="submit"><a href="{%  url 'delete_project' project.id %}">delete project</a></button>
+</button>
+
+</li>
+{% endfor %}
+</ul>
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{%  extends 'app_project/base.html' %}
+
+{% block content %}
+
+
+{{ message }}
+<h5>
+welcome to permission created
+</h5> 
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+<a href="{% url 'get_user_permissions' %}">get permissions</a>
+{% endblock content  %}

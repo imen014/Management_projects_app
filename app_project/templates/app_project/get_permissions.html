@@ -1,0 +1,22 @@
+{%  extends 'app_project/base.html' %}
+
+
+{% block content %}
+
+
+<ul>
+{% for permission in permissions %}
+<li>
+{{  permission.codename }}
+{{  permission.name }}
+{{  permission.content_type }}
+<button type="submit" ><a href="{% url 'delete_permission' permission.id %}">delete</a></button>
+</button>
+
+</li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock  %} 

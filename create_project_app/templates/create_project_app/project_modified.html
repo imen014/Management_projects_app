@@ -1,0 +1,15 @@
+{%  extends 'create_project_app/base.html' %}
+
+
+{% block content %}
+
+{{ message }}
+
+<form method="POST">
+{% csrf_token %}
+{{ form_project.as_p }}
+<input type="submit" />
+</form>
+
+
+{% endblock content %}
