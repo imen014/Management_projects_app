@@ -1,0 +1,25 @@
+{%  extends 'app_project/base.html' %}
+
+{% block content %}
+
+{{ message }}
+<h4>groups</h4>
+
+<ul>
+{% for group in groups %}
+<li>
+
+
+
+name: {{ group.name }} - 
+<button type="submit"><a href="{%  url 'modify_group' group.id %}">Modify </a></button>
+<button type="submit"><a href="{%  url 'delete_group' group.id %}">Delete</a></button>
+<a href="{%  url 'get_users_from_group' group.id %}">Get Users From Group</a>
+
+</li>
+{% endfor %}
+</ul>
+
+<button type="submit"><a href="{%  url 'create_group' %}">Create</a></button>
+
+{% endblock content %}
