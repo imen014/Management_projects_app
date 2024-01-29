@@ -1,0 +1,10 @@
+{%  extends 'app_project/base.html' %}
+
+{% block content %}
+
+{%  for user in users_in_group %}
+{{ user.username }} in {{  group.name  }}
+
+{%  endfor %}
+
+{% endblock content  %}

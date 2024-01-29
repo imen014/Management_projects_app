@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from app_project.models import PermissionCreator, AttribuerPermission
+from app_project.models import PermissionCreator, AttribuerPermission, GroupCreator, AttribuerGroupModel, AttribuerGroupPermission
 
 
 
@@ -25,4 +25,18 @@ class AttribuerPermissionForm(forms.ModelForm):
         model = AttribuerPermission
         fields = ['permission','users']
 
+class GroupCreatorForm(forms.ModelForm):
     
+    class Meta:
+        model = GroupCreator
+        fields = ['name']
+
+class AttribuerGroupForm(forms.ModelForm):
+    class Meta:
+        model = AttribuerGroupModel
+        fields = ['user','group']
+
+class AttribuerGroupPermissionForm(forms.ModelForm):
+    class Meta:
+        model = AttribuerGroupPermission
+        fields = ['group','permission']

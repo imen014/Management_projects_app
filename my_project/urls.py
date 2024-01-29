@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_project.views import create_user, login_user, home, logout_user, get_users, delete_user, get_user_permissions, create_permission, attribuer_permission, get_permission_per_user, delete_permission
+from app_project.views import create_user, login_user, home, logout_user, get_users, delete_user, get_user_permissions, create_permission, attribuer_permission, get_permission_per_user, delete_permission, create_group, get_groups, modify_group, delete_group, attribuer_group, attribuerGroupPermission, attribuer_group_user_selon_role, get_users_from_group
 from create_project_app.views import create_project, get_my_projects, get_projects, modify_project, delete_project
 
 urlpatterns = [
@@ -37,4 +37,12 @@ urlpatterns = [
     path('get_projects/', get_projects, name="get_projects"),
     path('modify_project/<int:id>/', modify_project, name="modify_project"),
     path('delete_project/<int:id>/', delete_project, name="delete_project"),
+    path('create_group/', create_group, name="create_group"),
+    path('get_groups/', get_groups, name="get_groups"),
+    path('modify_group/<int:id>/', modify_group, name="modify_group"),
+    path('delete_group/<int:id>/', delete_group, name="delete_group"),
+    path('attribuer_group/', attribuer_group, name="attribuer_group"),
+    path('attribuerGroupPermission/', attribuerGroupPermission, name="attribuerGroupPermission"),
+    path('attribuer_group_user_selon_role/', attribuer_group_user_selon_role, name="attribuer_group_user_selon_role"),
+    path('get_users_from_group/<int:id>/', get_users_from_group, name="get_users_from_group"),
 ]
